@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Suites Hotel</title>
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--Bootstrap Css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--Bootstrap Datepicker-->
+    <link rel="stylesheet" href="/css/bootstrap-datepicker3.css">
+    <!--Css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Flaticon css-->
+    <link rel="stylesheet" href="/my-icons-collection_2/font/flaticon.css">
+</head>
+<body>
+    <!--MAIN HEADER-->
+    <header id="main-header">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <h2>The Suites</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Rooms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--MAIN HERO-->
+    <div id="hero-banner">
+        <div class="hero-slides-container">
+            <div class="slides-wrapper parallax active">
+                <div class="slides">
+                    <div class="slides-content text-center col-6">
+                        <h1>Welcome To Suites</h1>
+                        <h6>Hotel & Resort</h6>
+                    </div>
+                </div>
+            </div>
+            <!--END-->
+            <div class="slides-wrapper parallax">
+                <div class="slides">
+                    <div class="slides-content text-center col-6">
+                        <h1>Unique Experiences</h1>
+                        <h6>Enjoy with us</h6>
+                    </div>
+                </div>
+            </div>
+            <!--END-->
+            <div class="slides-wrapper parallax">
+                <div class="slides">
+                    <div class="slides-content text-center col-6">
+                        <h1>Relaxing Room</h1>
+                        <h6>Your Room, Your Stay</h6>
+                    </div>
+                </div>
+            </div>
+            <!--END-->
+        </div>
+        <div class="slider-nav">
+            <div class="slider-arrow-prev arrow">
+                <span class="icon-arrow-prev ">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+            </div>
+            <div class="slider-arrow-next arrow">
+                <span class="icon-arrow-next">
+                    <i class="fas fa-arrow-right"></i>
+                </span>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <div class="dot active" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+        </div>
+    </div>
+
+    <!--RESERVATION-->
+    <section id="reservation">
+        <div class="container p-0">
+            <div class="row justify-content-end">
+                <div class="col-lg-4">
+                    <div class="form-wrapper">
+                        <form action="" id="reserveForm" autocomplete="off">
+                            <div class="form-group">
+                                <label for="checkIn">Check in:</label>
+                                <input type="text" id="checkIn" class="form-control date" placeholder="M/D/YYYY">
+                            </div>
+                            <div class="form-group">
+                                <label for="checkOut">Check out:</label>
+                                <input type="text" id="checkOut" class="form-control date" placeholder="M/D/YYYY">
+                            </div>
+                            <div class="form-group">
+                                <label for="guest">Guest:</label>
+                                <input type="text" id="guest" class="form-control" placeholder="How many...">
+                            </div>
+                            <div class="form-group m-0">
+                                <input type="submit" value="Submit" id="submitBtn" class="form-control btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="localStorage">
+        <div class="container">
+            <table class="w-100">
+                <thead>
+                   <tr>
+                       <th>Date In</th>
+                       <th>Date Out</th>
+                       <th>Guest</th>
+                       <th>Status</th>
+                   </tr>
+                </thead>
+                <tbody id="output">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!--ROOMS-->
+    <section id="rooms" class="section-gap bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Rooms</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="room-item text-center">
+                        <a href="#" class="d-block mb-0 thumbnail">
+                            <img src="/img/img_1.jpg" alt="">
+                        </a>
+                        <div class="room-text">
+                            <h3 class="heading">Standard Room</h3>
+                            <span class="price">$350.00 / per night</span>
+                        </div>
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-4 mb-5">
+                    <div class="room-item text-center">
+                        <a href="#" class="d-block mb-0 thumbnail">
+                            <img src="/img/img_2.jpg" alt="">
+                        </a>
+                        <div class="room-text">
+                            <h3 class="heading">Family Room</h3>
+                            <span class="price">$400.00 / per night</span>
+                        </div>
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-4 mb-5">
+                    <div class="room-item text-center">
+                        <a href="#" class="d-block mb-0 thumbnail">
+                            <img src="/img/img_3.jpg" alt="">
+                        </a>
+                        <div class="room-text">
+                            <h3 class="heading">Single Room</h3>
+                            <span class="price">$255.00 / per night</span>
+                        </div>
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-4 mb-5">
+                    <div class="room-item text-center">
+                        <a href="#" class="d-block mb-0 thumbnail">
+                            <img src="/img/img_1.jpg" alt="">
+                        </a>
+                        <div class="room-text">
+                            <h3 class="heading">Deluxe Room</h3>
+                            <span class="price">$150.00 / per night</span>
+                        </div>
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-4 mb-5">
+                    <div class="room-item text-center">
+                        <a href="#" class="d-block mb-0 thumbnail">
+                            <img src="/img/img_2.jpg" alt="">
+                        </a>
+                        <div class="room-text">
+                            <h3 class="heading">Luxury Room</h3>
+                            <span class="price">$200.00 / per night</span>
+                        </div>
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-4 mb-5">
+                    <div class="room-item text-center">
+                        <a href="#" class="d-block mb-0 thumbnail">
+                            <img src="/img/img_3.jpg" alt="">
+                        </a>
+                        <div class="room-text">
+                            <h3 class="heading">Standard Room</h3>
+                            <span class="price">$350.00 / per night</span>
+                        </div>
+                    </div>
+                </div>
+                <!--END-->
+            </div>
+        </div>
+    </section>
+
+    <!--ABOUT US-->
+    <section id="about-us" class="section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about-image">
+                        <a href="#">
+                            <span class="icon-play-container">
+                                <span class="icon-block">
+                                    <i class="fas fa-play"></i>
+                                </span>
+                            </span>
+                            <img src="/img/img_2.jpg" alt="">
+                        </a>
+                        <div class="small-image">
+                            <img src="/img/img_1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 ml-auto">
+                    <div class="about-us">
+                        <div class="section-heading">
+                            <h2 class="mb-5">About Us</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..</p>
+                            <a href="#" class="video-btn">
+                                Watch Video
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--HOTEL FEATURES-->
+    <section id="features" class="section-gap">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Hotel Features</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-swimming-pool display-3 d-block text"></span>
+                        <h5>Swimming pool</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-desk display-3 d-block text"></span>
+                        <h5>Hotel Teller</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-swimming-pool display-3 d-block text"></span>
+                        <h5>Swimming pool</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-parking display-3 d-block text"></span>
+                        <h5>Car Parking</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-hair-dryer display-3 d-block text"></span>
+                        <h5>Hair Dryer</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-hair-dryer display-3 d-block text"></span>
+                        <h5>Hair Dryer</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-parking display-3 d-block text"></span>
+                        <h5>Drink</h5>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-block p-4 text-center">
+                        <span class="flaticon-swimming-pool display-3 d-block text"></span>
+                        <h5>Swimming pool</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--COUNTDOWN-->
+    <div id="countdown" class="parallax">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="promo-item">
+                        <h2 class="text-white mb-3">Summer Promo 50% Off</h2>
+                        <a href="#" class="btn promo-btn text-uppercase">Avail Now</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="countdown-item">
+                        <p class="caption">The Promo will start in</p>
+                        <div id="date-countdown" class="d-flex">
+                            <div class="countdown-block">
+                                <span id="weeks"></span>
+                                weeks
+                            </div>
+                            <div class="countdown-block">
+                                <span id="days"></span>
+                                days
+                            </div>
+                            <div class="countdown-block">
+                                <span id="hours"></span>
+                                hours
+                            </div>
+                            <div class="countdown-block">
+                                <span id="minutes"></span>
+                                minutes
+                            </div>
+                            <div class="countdown-block">
+                                <span id="seconds"></span>
+                                seconds
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--GALLERY-->
+    <section id="gallery" class="section-gap">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Our Gallery</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="0">
+                        <img src="/img/img_1.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="1">
+                        <img src="/img/img_2.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="2">
+                        <img src="/img/img_3.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="3">
+                        <img src="/img/img_4.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="4">
+                        <img src="/img/img_5.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="5">
+                        <img src="/img/img_6.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="6">
+                        <img src="/img/img_7.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+                <div class="col-md-3 mb-3">
+                    <div class="gallery-item" data-image="7">
+                        <img src="/img/img_4.jpg" alt="">
+                    </div>
+                </div>
+                <!--END-->
+            </div>
+        </div>
+    </section>
+
+    <!--EVENTS-->
+    <section id="events" class="section-gap">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">Upcoming Events</h2>
+            </div>
+            <div class="event-slide__container">
+                <div class="event-slide">
+
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_1.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 1</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_2.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 2</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_3.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 3</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_4.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 4</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_5.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 5</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_6.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 6</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_7.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 7</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_4.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 8</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                    <div class="event-item">
+                        <div class="event-inner">
+                            <div class="event-image mb-3">
+                                <img src="/img/img_1.jpg" alt="">
+                            </div>
+                            <div class="event-desc">
+                                <h2>Lorem Ipsum Dolor Si Amet 9</h2>
+                                <span class="mb-3 d-block">Dec 20th, 2018 By <span class="event-highlight">Admin</span></span>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, exercitationem corporis, nostrum, commodi hic eaque temporibus error cupiditate iusto nulla numquam veniam dolorem fugiat soluta.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END-->
+                </div>
+                <div class="event-nav">
+                    <button class="event-prev event-btn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="event-next event-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="event-dots text-center">
+                    <div class="event-dot active" data-slide="0"></div>
+                    <div class="event-dot" data-slide="1"></div>
+                    <div class="event-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--WHAT PEOPLE SAY-->
+    <section id="what-people__say" class="section-gap">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="text-center">What People Say</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="what-people__item d-flex">
+                        <div class="what-people__image">
+                            <img src="/img/person_1.jpg" alt="">
+                        </div>
+                        <div class="what-people__text">
+                            <h5>Jane Mars</h5>
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore repudiandae assumenda hic quos, quod aliquam.</q>
+                            </blockquote>
+                        </div>
+                    </div>  
+                </div>
+                <div class="col-md-6">
+                    <div class="what-people__item d-flex">
+                        <div class="what-people__image">
+                            <img src="/img/person_2.jpg" alt="">
+                        </div>
+                        <div class="what-people__text">
+                            <h5>Jane Doe</h5>
+                            <blockquote>
+                                <q>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore repudiandae assumenda hic quos, quod aliquam.</q>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--MAIN FOOTER-->
+    <footer id="main-footer" class="section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-item">
+                    <h3>About</h3> 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
+                    <a href="#" class="btn btn-primary btn-fill">Read More</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-item">
+                        <h3>Quick Menu</h3>
+                        <ul class="footer-list">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Approach</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-item">
+                        <h3>Ministries</h3>
+                        <ul class="footer-list">
+                            <li><a href="#">Children</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">Bible Study</a></li>
+                            <li><a href="#">Church</a></li>
+                            <li><a href="#">Missionaries</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="footer-item">
+                        <h3>Social Icons</h3>
+                        <ul class="social-links d-flex">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-footer">
+                <div class="copyright-container text-center pt-5">
+                    <p>Copyright &copy; 2019 All Rights Reserved | This template is made with <i class="fas fa-heart"></i> by Me</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!--GALLERY MODAL-->
+    <div class="gallery-modal">
+        <div class="gallery-content">
+            <div class="gallery-image">
+                <figure>
+                    <img src="/img/img_1.jpg" alt="" id="image-holder">
+                    <figcaption>
+                        <div class="counter-container text-right text-white">
+                            <span class="counter">1 of 8</span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <button class="gallery-prev gallery-btn">
+            <i class="fas fa-caret-left fa-3x"></i>
+        </button>
+        <button class="gallery-next gallery-btn">
+            <i class="fas fa-caret-right fa-3x"></i>
+        </button>
+        <span class="close-btn">
+            <i class="fas fa-times fa-1x"></i>
+        </span>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+    <!--Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-datepicker.js"></script>
+    <script>
+        $('.date').datepicker({
+            format : 'dd-mm-yyyy',
+            autoclose : true,
+        });
+    </script>
+    
+</body>
+</html>
